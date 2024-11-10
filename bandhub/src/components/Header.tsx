@@ -17,7 +17,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Music className="h-8 w-8" />
-            <span className="text-xl font-bold">BAND_NAME</span>
+            <span className="text-xl font-bold">Band Mate</span>
           </div>
           <nav className="hidden md:block">
             <ul className="flex space-x-6">

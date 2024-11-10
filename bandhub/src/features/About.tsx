@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-[#F5DEB3] text-[#8B4513] py-8">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-8">Om os</h1>
+        <h1 className="text-4xl font-bold text-center mb-8">Om Band Mate</h1>
         <div className="bg-[#D2B48C] rounded-lg shadow-lg p-6 md:p-8 max-w-3xl mx-auto">
           <div className="flex justify-center mb-6">
             <Music className="h-16 w-16 text-[#8B4513]" />

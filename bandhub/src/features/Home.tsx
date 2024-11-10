@@ -7,7 +7,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-4xl md:text-5xl font-bold text-[#8B4513] mb-6">
-              Velkommen til Band Manager
+              Velkommen til Band Mate
             </h1>
             <p className="text-lg md:text-xl text-[#8B4513] mb-8">
               Din centrale platform for at organisere og koordinere bandets
