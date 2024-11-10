@@ -15,10 +15,10 @@ export default function Header() {
     <header className="bg-[#8B4513] text-[#FFE4B5] p-4 shadow-md">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-2">
+          <a href="/" className="flex items-center space-x-2">
             <Music className="h-8 w-8" />
             <span className="text-xl font-bold">Band Mate</span>
-          </div>
+          </a>
           <nav className="hidden md:block">
             <ul className="flex space-x-6">
               {navItems.map((item) => (
