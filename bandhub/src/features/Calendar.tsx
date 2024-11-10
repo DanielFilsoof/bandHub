@@ -1,5 +1,7 @@
+import UnderDevelopment from "../components/UnderDevelopment";
+
 function Calendar() {
-  return <h1>Kalender</h1>;
+  return <UnderDevelopment />;
 }
 
 export default Calendar;
