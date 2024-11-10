@@ -25,7 +25,7 @@ export default function SheetMusicDetail() {
           </div>
           <div className="bg-white p-4 rounded-lg shadow-lg">
             <h1 className="text-3xl font-bold text-[#8B4513]">
-              Sheet music not found
+              Sang ikke fundet
             </h1>
           </div>
         </div>
@@ -49,7 +49,9 @@ export default function SheetMusicDetail() {
           </h1>
           <button
             className="bg-[#8B4513] hover:bg-[#A0522D] text-[#FFE4B5] rounded-lg px-4 py-2 transition-colors duration-200 flex items-center gap-2"
-            onClick={() => alert("Download functionality to be implemented")}
+            onClick={() =>
+              alert("Download funktion er endnu ikke implementeret")
+            }
           >
             <Download className="w-5 h-5" />
             Download
