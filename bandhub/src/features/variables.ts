@@ -2,7 +2,7 @@ export const sheetMusic = [
   {
     id: 1,
     name: "This Land Is Your Land",
-    image: "/public/assets/sheets/this land is your land.jpg",
+    image: "/assets/sheets/this land is your land.jpg",
   },
   {
     id: 2,
