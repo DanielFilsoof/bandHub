@@ -7,11 +7,11 @@ export const sheetMusic = [
   {
     id: 2,
     name: "Old Rosin the Beau",
-    image: "/public/assets/sheets/old rosin the beau.jpg",
+    image: "/assets/sheets/old rosin the beau.jpg",
   },
   {
     id: 3,
     name: "Skipper Klements morgensang",
-    image: "/public/assets/sheets/klementsMorgensang.jpg",
+    image: "/assets/sheets/klementsMorgensang.jpg",
   },
 ];
