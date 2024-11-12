@@ -4,12 +4,14 @@ import About from "./features/About";
 import SheetMusicList from "./features/SheetMusicList";
 import Calendar from "./features/Calendar";
 import SheetMusicDetail from "./features/SheetMusicDetail";
+import Login from "./features/login/Login";
 
 function AppRouter() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/hjem" element={<App />} />
         <Route path="/om" element={<About />} />
         <Route path="/noder" element={<SheetMusicList />} />
