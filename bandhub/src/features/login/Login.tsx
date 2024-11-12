@@ -68,6 +68,15 @@ export default function Login() {
             Log ind
           </button>
         </form>
+        <div className="mt-4 text-center">
+          <span className="text-[#8B4513]">Ikke registreret?</span>
+          <button
+            onClick={() => navigate("/register")}
+            className="ml-2 text-[#8B4513] hover:text-[#A0522D] font-semibold transition-colors duration-200"
+          >
+            Opret en konto
+          </button>
+        </div>
       </div>
     </div>
   );
