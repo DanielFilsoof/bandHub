@@ -2,6 +2,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
@@ -18,6 +19,7 @@ const users = [
 
 // Middleware
 app.use(bodyParser.json());
+app.use(cors()); // Enable CORS
 
 // Helper function to authenticate token
 function authenticateToken(req, res, next) {
