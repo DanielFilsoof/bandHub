@@ -13,8 +13,12 @@ export default function Header() {
     { name: "Om", href: "/om" },
   ];
 
-  const handleLogout = () => {
-    // Implement logout logic here
+  const handleLogout = async () => {
+    await fetch("http://localhost:3000/logout", {
+      method: "POST",
+      credentials: "include", // Include cookies in the request
+    });
+
     navigate("/login");
   };
 

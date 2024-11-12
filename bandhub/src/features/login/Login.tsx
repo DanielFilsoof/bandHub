@@ -21,16 +21,15 @@ export default function Login() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ username: email, password }),
+        credentials: "include", // Include cookies in the request
       });
 
       if (!response.ok) {
         throw new Error("Login failed");
       }
 
-      const data = await response.json();
-      // Save the token in local storage
-      localStorage.setItem("token-band-mate", data.token);
-      console.log("Login successful:", data);
+      // No need to save the token in local storage
+      console.log("Login successful");
       navigate("/");
     } catch (err) {
       if (err instanceof Error) {
