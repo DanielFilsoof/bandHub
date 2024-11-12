@@ -1,0 +1,7 @@
+# Other common ignores
+node_modules
+dist
+build
+.DS_Store
+.env
+*.log
