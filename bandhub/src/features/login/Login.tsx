@@ -28,7 +28,6 @@ export default function Login() {
         throw new Error("Login failed");
       }
 
-      // No need to save the token in local storage
       console.log("Login successful");
       navigate("/");
     } catch (err) {
