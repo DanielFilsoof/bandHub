@@ -7,14 +7,38 @@ export default function Login() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !password) {
       setError("Email og adgangskode er påkrævet");
       return;
     }
-    // Implement login logic here
-    navigate("/");
+
+    try {
+      const response = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username: email, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Login failed");
+      }
+
+      const data = await response.json();
+      // Save the token in local storage
+      localStorage.setItem("token-band-mate", data.token);
+      console.log("Login successful:", data);
+      navigate("/");
+    } catch (err) {
+      if (err instanceof Error) {
+        setError("Login failed: " + err.message);
+      } else {
+        setError("Login failed");
+      }
+    }
   };
 
   return (
