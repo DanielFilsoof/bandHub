@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Music, Menu, X } from "lucide-react";
+import { Music, Menu, X, LogOut } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navItems = [
     { name: "Hjem", href: "/" },
@@ -10,6 +12,11 @@ export default function Header() {
     { name: "Kalender", href: "/kalender" },
     { name: "Om", href: "/om" },
   ];
+
+  const handleLogout = () => {
+    // Implement logout logic here
+    navigate("/login");
+  };
 
   return (
     <header className="bg-[#8B4513] text-[#FFE4B5] p-4 shadow-md">
@@ -31,6 +38,15 @@ export default function Header() {
                   </a>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={handleLogout}
+                  className="text-lg font-semibold hover:text-white transition-colors duration-200 flex items-center space-x-2"
+                >
+                  <LogOut className="h-5 w-5" />
+                  <span>Log ud</span>
+                </button>
+              </li>
             </ul>
           </nav>
           <button
@@ -58,6 +74,18 @@ export default function Header() {
                   </a>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    handleLogout();
+                  }}
+                  className="block text-lg font-semibold hover:text-white transition-colors duration-200 py-2 flex items-center space-x-2"
+                >
+                  <LogOut className="h-5 w-5" />
+                  <span>Log ud</span>
+                </button>
+              </li>
             </ul>
           </nav>
         )}

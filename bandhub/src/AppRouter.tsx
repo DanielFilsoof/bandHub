@@ -5,10 +5,12 @@ import SheetMusicList from "./features/SheetMusicList";
 import Calendar from "./features/Calendar";
 import SheetMusicDetail from "./features/SheetMusicDetail";
 import Login from "./features/login/Login";
+import Header from "./components/Header";
 
 function AppRouter() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
