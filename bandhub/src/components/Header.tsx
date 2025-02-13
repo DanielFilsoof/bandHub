@@ -9,7 +9,6 @@ export default function Header() {
   const navItems = [
     { name: "Hjem", href: "/" },
     { name: "Noder", href: "/noder" },
-    { name: "Kalender", href: "/kalender" },
     { name: "Om", href: "/om" },
     { name: "Metronom", href: "/metronom" },
   ];
