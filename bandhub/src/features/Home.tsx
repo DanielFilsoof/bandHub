@@ -11,9 +11,9 @@ export default function Home() {
               Welcome to Music Reader Assistant
             </h1>
             <p className="text-lg md:text-xl text-[#8B4513] mb-8">
-              Your personal assistant for reading and practicing sheet music. 
-              Enhanced with a metronome to help you maintain perfect timing, 
-              and soon with auto-generated backing tracks.
+              Your personal assistant for reading and practicing sheet music.
+              Enhanced with a metronome to help you maintain perfect timing, and
+              soon with auto-generated backing tracks.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-2 max-w-xl">
@@ -61,7 +61,7 @@ export default function Home() {
 
         <div className="mt-12 text-center">
           <p className="text-[#8B4513] text-lg">
-            Samarbejd, organiser, og spil mere musik sammen!
+            Practice Smarter, Read Better, Play with Confidence!
           </p>
         </div>
       </div>
