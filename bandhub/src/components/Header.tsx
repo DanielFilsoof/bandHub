@@ -11,6 +11,7 @@ export default function Header() {
     { name: "Noder", href: "/noder" },
     { name: "Kalender", href: "/kalender" },
     { name: "Om", href: "/om" },
+    { name: "Metronom", href: "/metronom" },
   ];
 
   const handleLogout = async () => {
