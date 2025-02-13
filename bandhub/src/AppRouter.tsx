@@ -6,7 +6,7 @@ import Calendar from "./features/Calendar";
 import SheetMusicDetail from "./features/SheetMusicDetail";
 import Login from "./features/login/Login";
 import Header from "./components/Header";
-import Metronom from "./pages/Metronom";
+import Metronom from "./features/metronom/Metronom";
 
 function AppRouter() {
   return (
