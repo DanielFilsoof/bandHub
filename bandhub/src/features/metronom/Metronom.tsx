@@ -6,8 +6,8 @@ const Metronom: React.FC = () => {
   const [state, controls] = useMetronome();
 
   return (
-    <div className="container mx-auto p-4 max-w-md">
-      <h1 className="text-2xl font-bold mb-6">Metronom</h1>
+    <div className="w-full">
+      <h2 className="text-base sm:text-lg font-semibold mb-2 sm:mb-4 text-[#8B4513]">Metronom</h2>
       <MetronomeControls state={state} controls={controls} />
     </div>
   );

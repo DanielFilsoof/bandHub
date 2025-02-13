@@ -13,45 +13,59 @@ interface MetronomeSound {
 // Separate audio logic into its own hook for Single Responsibility
 const useMetronomeSound = (): MetronomeSound => {
   const audioContextRef = useRef<AudioContext | null>(null);
+  const isCleanedUpRef = useRef(false);
 
-  useEffect(() => {
-    audioContextRef.current = new AudioContext();
-    return () => {
-      if (audioContextRef.current) {
-        audioContextRef.current.close();
-      }
-    };
-  }, []);
-
-  const play = useCallback((isAccent: boolean) => {
-    if (!audioContextRef.current) return;
-
-    const oscillator = audioContextRef.current.createOscillator();
-    const gainNode = audioContextRef.current.createGain();
-
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContextRef.current.destination);
-
-    oscillator.frequency.setValueAtTime(
-      isAccent ? 1000 : 800,
-      audioContextRef.current.currentTime
-    );
-
-    gainNode.gain.setValueAtTime(0.3, audioContextRef.current.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(
-      0.01,
-      audioContextRef.current.currentTime + 0.1
-    );
-
-    oscillator.start();
-    oscillator.stop(audioContextRef.current.currentTime + 0.1);
-  }, []);
-
-  const cleanup = useCallback(() => {
-    if (audioContextRef.current) {
-      audioContextRef.current.close();
+  const initializeAudioContext = useCallback(() => {
+    if (!audioContextRef.current && !isCleanedUpRef.current) {
+      audioContextRef.current = new AudioContext();
     }
   }, []);
+
+  const play = useCallback(
+    (isAccent: boolean) => {
+      try {
+        initializeAudioContext();
+        if (!audioContextRef.current || isCleanedUpRef.current) return;
+
+        const oscillator = audioContextRef.current.createOscillator();
+        const gainNode = audioContextRef.current.createGain();
+
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContextRef.current.destination);
+
+        oscillator.frequency.setValueAtTime(
+          isAccent ? 1000 : 800,
+          audioContextRef.current.currentTime
+        );
+
+        gainNode.gain.setValueAtTime(0.3, audioContextRef.current.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(
+          0.01,
+          audioContextRef.current.currentTime + 0.1
+        );
+
+        oscillator.start();
+        oscillator.stop(audioContextRef.current.currentTime + 0.1);
+      } catch (error) {
+        console.warn("Error playing metronome sound:", error);
+      }
+    },
+    [initializeAudioContext]
+  );
+
+  const cleanup = useCallback(() => {
+    if (audioContextRef.current && !isCleanedUpRef.current) {
+      isCleanedUpRef.current = true;
+      audioContextRef.current.close().catch(console.warn);
+      audioContextRef.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      cleanup();
+    };
+  }, [cleanup]);
 
   return { play, cleanup };
 };
