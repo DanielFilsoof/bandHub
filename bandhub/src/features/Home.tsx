@@ -1,4 +1,4 @@
-import { Calendar, FileText, ArrowRight } from "lucide-react";
+import { FileText, ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -11,10 +11,10 @@ export default function Home() {
             </h1>
             <p className="text-lg md:text-xl text-[#8B4513] mb-8">
               Din centrale platform for at organisere og koordinere bandets
-              aktiviteter. Alt samlet ét sted - noder, kalender og mere.
+              aktiviteter. Alt samlet ét sted - noder og mere.
             </p>
 
-            <div className="grid gap-4 sm:grid-cols-2 max-w-xl">
+            <div className="max-w-xl">
               <a
                 href="/noder"
                 className="group bg-[#8B4513] hover:bg-[#A0522D] text-[#FFE4B5] rounded-lg p-4 transition-all duration-200 flex items-center gap-3"
@@ -25,18 +25,6 @@ export default function Home() {
                   <div className="text-sm opacity-90">
                     Find alle bandets noder
                   </div>
-                </div>
-                <ArrowRight className="w-5 h-5 ml-auto transform group-hover:translate-x-1 transition-transform" />
-              </a>
-
-              <a
-                href="/kalender"
-                className="group bg-[#8B4513] hover:bg-[#A0522D] text-[#FFE4B5] rounded-lg p-4 transition-all duration-200 flex items-center gap-3"
-              >
-                <Calendar className="w-6 h-6" />
-                <div>
-                  <div className="font-semibold">Kalender</div>
-                  <div className="text-sm opacity-90">Se kommende events</div>
                 </div>
                 <ArrowRight className="w-5 h-5 ml-auto transform group-hover:translate-x-1 transition-transform" />
               </a>
