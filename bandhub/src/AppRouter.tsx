@@ -3,7 +3,6 @@ import App from "./App";
 import About from "./features/About";
 import SheetMusicList from "./features/SheetMusicList";
 import SheetMusicDetail from "./features/SheetMusicDetail";
-import Login from "./features/login/Login";
 import Header from "./components/Header";
 import Metronom from "./features/metronom/Metronom";
 
@@ -13,12 +12,11 @@ function AppRouter() {
       <Header />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/hjem" element={<App />} />
-        <Route path="/om" element={<About />} />
-        <Route path="/noder" element={<SheetMusicList />} />
-        <Route path="/noder/:id" element={<SheetMusicDetail />} />
-        <Route path="/metronom" element={<Metronom />} />
+        <Route path="/home" element={<App />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/sheets" element={<SheetMusicList />} />
+        <Route path="/sheets/:id" element={<SheetMusicDetail />} />
+        <Route path="/metronome" element={<Metronom />} />
       </Routes>
     </Router>
   );

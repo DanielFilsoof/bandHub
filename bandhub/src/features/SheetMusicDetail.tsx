@@ -19,16 +19,16 @@ export default function SheetMusicDetail() {
         <div className="container mx-auto max-w-4xl">
           <div className="mb-6 flex justify-between items-center">
             <Link
-              to="/noder"
+              to="/sheets"
               className="text-[#8B4513] hover:text-[#A0522D] transition-colors duration-200 flex items-center gap-2"
             >
               <ArrowLeft className="w-5 h-5" />
-              Tilbage til nodeliste
+              Back to sheet music
             </Link>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-lg">
             <h1 className="text-3xl font-bold text-[#8B4513]">
-              Sang ikke fundet
+              Song not found
             </h1>
           </div>
         </div>
@@ -41,11 +41,11 @@ export default function SheetMusicDetail() {
       <div className="container mx-auto max-w-4xl">
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center mb-6">
           <Link
-            to="/noder"
+            to="/sheets"
             className="text-[#8B4513] hover:text-[#A0522D] transition-colors duration-200 flex items-center gap-2"
           >
             <ArrowLeft className="w-5 h-5" />
-            Tilbage til nodeliste
+            Back to sheet music
           </Link>
           <h1 className="text-2xl sm:text-3xl font-bold text-[#8B4513] text-center order-first sm:order-none">
             {sheetMusic.name}
@@ -56,7 +56,7 @@ export default function SheetMusicDetail() {
               className="bg-[#8B4513] hover:bg-[#A0522D] text-[#FFE4B5] rounded-lg px-3 py-2 sm:px-4 sm:py-2 transition-colors duration-200 flex items-center gap-2 text-sm sm:text-base"
             >
               <Music className="w-4 h-4 sm:w-5 sm:h-5" />
-              {showMetronom ? "Skjul Metronom" : "Vis Metronom"}
+              {showMetronom ? "Hide Metronome" : "Show Metronome"}
             </button>
             <button
               className="bg-[#8B4513] hover:bg-[#A0522D] text-[#FFE4B5] rounded-lg px-3 py-2 sm:px-4 sm:py-2 transition-colors duration-200 flex items-center gap-2 text-sm sm:text-base"
@@ -70,7 +70,7 @@ export default function SheetMusicDetail() {
         <div className="bg-white p-2 sm:p-4 rounded-lg shadow-lg">
           <img
             src={sheetMusic.image}
-            alt={sheetMusic.name}
+            alt={`Sheet music for ${sheetMusic.name}`}
             className="w-full h-auto"
           />
         </div>
