@@ -11,7 +11,7 @@ export default function SheetMusicList() {
   const [sheets, setSheets] = useState<typeof defaultSheetMusic>(() => {
     // Load sheets from localStorage on initial render
     const savedSheets = localStorage.getItem(STORAGE_KEY);
-    return savedSheets ? JSON.parse(savedSheets) : defaultSheetMusic;
+    return savedSheets ? JSON.parse(savedSheets) : [];
   });
   const [showUpload, setShowUpload] = useState(false);
   const [localImages, setLocalImages] = useState<Record<string, string>>({});
@@ -49,14 +49,16 @@ export default function SheetMusicList() {
     };
 
     loadLocalImages();
+  }, [sheets]);
 
-    // Cleanup function to revoke object URLs when component unmounts
+  // Cleanup object URLs when component unmounts
+  useEffect(() => {
     return () => {
       Object.values(localImages).forEach((url) => {
         URL.revokeObjectURL(url);
       });
     };
-  }, [sheets]);
+  }, [localImages]);
 
   const handleUploadComplete = (newSheet: {
     id: number;
